@@ -59,5 +59,5 @@ for fname in os.listdir(DATA_PATH):
         with open(fpath, encoding='utf8') as f:
             data += parse_file(f.read())
 df = pd.DataFrame(data)
-df["timestamp"] = pd.to_datetime(df["timestamp"])
+df["timestamp"] = pd.to_datetime(df["timestamp"], format="%d.%m.%Y %H:%M:%S")
 plot_message_count_by_name(df)
