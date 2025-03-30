@@ -1,0 +1,45 @@
+[project]
+name = "tele-data"
+dependencies = [
+  "ruff",
+  "pandas",
+  "pandas-stubs",
+  "black",
+  "matplotlib",
+  "seaborn",
+  "types-seaborn",
+  "mypy"
+]
+version = "0.1.0"
+description = "A project for analyzing telegram group chat exports."
+authors = [
+  { name = "Jan-Eike Golenia", email = "golenia@posteo.de" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.13"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
+
+[tool.mypy]
+strict = true
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+check_untyped_defs = true
